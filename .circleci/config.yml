@@ -39,4 +39,4 @@ jobs:
 
       - run:
             name: Firebase Deploy
-            command: ./node_modules/.bin/firebase deploy --token=1/T4_pKNBiufDY7S0ZIgHve7czDLFqLWPpydDvS9_O900
+            command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
