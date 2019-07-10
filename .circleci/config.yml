@@ -1,0 +1,42 @@
+#
+# CircleCI 2.0 Gatsby to Firebase Config File
+#
+
+version: 2
+jobs:
+  build:
+    docker:
+        - image: circleci/node:10
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      
+    
+      # Download and cache dependencies
+      - restore_cache:
+            keys:
+            # Find a cache corresponding to this specific package-lock.json checksum
+            # when file is changed, key will fail
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            #find the most recently generated cached used from any branch
+            - v1-npm-deps-
+
+      - run: 
+            name: Install Dependencies
+            command: yarn install
+            
+      - save_cache:
+            key: v1-npm-deps-{{ checksum "package-lock.json" }}
+
+            paths: 
+                - ./node_modules
+
+      - run:
+            name: Gatsby Build
+            command: ./node_modules/.bin/gatsby build
+
+      - run:
+            name: Firebase Deploy
+            command: ./node_modules/.bin/firebase deploy --token=1/T4_pKNBiufDY7S0ZIgHve7czDLFqLWPpydDvS9_O900
