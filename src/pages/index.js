@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-// import { Grid, GridContainer} from "unsemantic"
+import { Grid, GridContainer} from "unsemantic"
 // Not sure how you got 'grid' to work
 
 import Layout from "../components/layout"
@@ -25,6 +25,9 @@ const IndexPage = () => (
           	<div className="hero-overlay"></div>
           	<img src={ exploreWineCounty } alt="Mustard Vines" className="wineryImage" />
     </div> 
+    <Grid>
+	    Test
+    </Grid>
     <h1>Hi people!!!</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
