@@ -28,16 +28,17 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-flamelink',
+      resolve: `gatsby-source-flamelink`,
       options: {
         firebaseConfig: {
-          pathToServiceAccount: './beyond-napa-valley-firebase-adminsdk-bs9lb-ef823287e3.json',
-          databaseURL: 'https://beyond-napa-valley.firebaseio.com',
-          storageBucket: 'gs://beyond-napa-valley'
+          pathToServiceAccount: `${__dirname}/beyond-napa-valley-firebase-adminsdk-bs9lb-ef823287e3.json`,
+          databaseURL: `https://beyond-napa-valley.firebaseio.com`,
+          storageBucket: `gs://beyond-napa-valley`
         },
-        dbType: 'cf',
-        environment: 'production',
+        dbType: `cf`,
+        environment: `production`,
         content: true,
+        populate: true,
         navigation: true,
         globals: true
       }

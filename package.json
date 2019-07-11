@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Dave Kanter and Haydn Adams",
   "dependencies": {
+    "@firebase/app-types": "0.x",
+    "@firebase/util": "0.x",
     "eslint": "^6.0.1",
     "eslint-plugin-react": "^7.14.2",
     "gatsby": "^2.13.13",
@@ -20,7 +22,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "unsemantic": "^1.2.3"
   },
   "devDependencies": {
     "firebase-tools": "^7.0.2",
